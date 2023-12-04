@@ -9,7 +9,8 @@
 .flexContainer {
     display: flex;
     flex-wrap: wrap;
-    max-width: 128px;
+    /* max-width: 128px; */
+    max-width: 40px;
     border: 0.7px solid blueviolet;
 
     margin: 0 auto;
@@ -17,4 +18,9 @@
 
 .title {
     text-align: center;
+}
+
+.reset-grid {
+    margin: 4px;
+    font-size: 8px
 }
