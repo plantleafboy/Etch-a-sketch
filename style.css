@@ -1,30 +1,36 @@
+html {
+    box-sizing: border-box;
+}
 .content-dock {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: last baseline;
+    flex-direction: row;
+    justify-content:center ;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 10%;
+    padding-right: 10%;
+
 }
 
 .options {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .flex-element {
     border: 0.3px solid black;
     background-color: cornsilk;
-    width: 0.5rem;
-    height: 0.5rem;
     box-sizing: border-box;
 }
 
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    /* max-width: 128px; */
-    max-width: 40px;
+    width: 250px;
+    height: 250px;
     border: 0.7px solid blueviolet;
-
+    background: olivedrab;
     margin: 0 auto;
 }
 
@@ -34,10 +40,69 @@
 
 .reset-grid, .rainbow-button, .eraser-button {
     margin: 4px;
-    font-size: 6px
+    font-size: 8px;
+    width: 50px;
+
 }
 
 /* .rainbow-button {
     margin: 4px;
     font-size: 8px
 } */
+
+.input-box {
+    display:flex;
+    font-size: 16px;
+    flex-direction: row;
+    height: 20px;
+}
+
+.grid-input {
+    margin-right: 2px;
+    width: 100px;
+    font-size: 10px;
+    text-align: center;
+    padding: 0px;
+}
+
+.grid-input:focus, .grid-input::placeholder {
+    outline: none;
+    font-style: italic;
+    font-size: 10px;
+    text-align: center;
+}
+
+.generate-button {
+    font-size: 8px;
+}
+
+.color-pick {
+    display:flex;
+    font-size: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 8px;
+}
+
+.fav-color {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    width: 23px; /* Set the desired width */
+    height: 23px; /* Set the desired height */
+    /* border: 0.1px solid black;
+    padding: 0px; */
+  }
+
+  .fav-color::-webkit-color-swatch {
+    border-radius: 2px;
+    border: none;
+  }
+
+  .fav-color::-moz-color-swatch {
+    border-radius: 2px;
+    border: none;
+  }
