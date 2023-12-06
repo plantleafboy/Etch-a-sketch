@@ -1,5 +1,8 @@
 
 const DEFAULTSIZE = 16;
+const golden_ratio_conjugate = 0.618033988749895
+
+
 const gridContainer = document.querySelector('.flex-container');
 let mouseHovFunction = "black";
 const resetButton = document.querySelector('.reset-grid');
@@ -9,17 +12,32 @@ const gridInput = document.querySelector('.grid-input');
 const eraserButton = document.querySelector('.eraser-button');
 const favColor = document.querySelector('.fav-color');
 
+let hue;
+let sat;
+let light;
+let a;
+
+
 rainbowButton.addEventListener('click', () => {
     mouseHovFunction = 'rainbow';
-    let rainbowColours = [];
-    for (i=0; i<24; i++) {
-        rainbowColours.push(Math.floor(Math.random()*16777215)).toString(16);
-    }
+
+    sat = Math.floor((Math.random()*45)+35); //tuning HSL values 
+    light = Math.floor((Math.random()*50)+35); //add alpha?
+
+    // let rainbowColours = []; //scrap array
+    // for (i=0; i<24; i++) {
+    //     rainbowColours.push(Math.floor(Math.random()*16777215)).toString(16);
+    // }
 });
 
 function generateRainbow() {    
-    let newColour = Math.floor(Math.random()*16777215).toString(16);
-    return `#${newColour}`;
+    // let newColour = Math.floor(Math.random()*16777215).toString(16); //naive imp
+    // return `#${newColour}`;
+
+    hue = Math.floor(Math.random()*360);
+    return `hsl(${hue}, ${sat}%, ${light}%)`;
+ 
+
 }
 // const color = `rgb(${red}, ${green}, ${blue})`;
 
