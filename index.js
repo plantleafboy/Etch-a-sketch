@@ -1,7 +1,6 @@
 
 const DEFAULTSIZE = 16;
-const golden_ratio_conjugate = 0.618033988749895
-
+const golden_ratio = 1.618033988749895
 
 const gridContainer = document.querySelector('.flex-container');
 let mouseHovFunction = "black";
@@ -16,7 +15,6 @@ let hue;
 let sat;
 let light;
 let a;
-
 
 rainbowButton.addEventListener('click', () => {
     mouseHovFunction = 'rainbow';
@@ -34,7 +32,7 @@ function generateRainbow() {
     // let newColour = Math.floor(Math.random()*16777215).toString(16); //naive imp
     // return `#${newColour}`;
 
-    hue = Math.floor(Math.random()*360);
+    hue = Math.floor((Math.random()*358) + golden_ratio);
     return `hsl(${hue}, ${sat}%, ${light}%)`;
  
 
@@ -57,7 +55,12 @@ generateButton.addEventListener('click', () => {
         child.remove();
     });
 
-    createGrid((gridInput.value));
+    let size = gridInput.value; 
+    if (size == "") {
+        size = 16;
+    }
+
+    createGrid(size);
     gridInput.value = '';
 });
 
@@ -74,13 +77,12 @@ window.onload = () => {
     console.log('loaded');
 }
 
-function createGrid(size) {
+function createGrid(size = 16) {
     for (var i=0; i<size*size; i++) {
 
         var aDiv = document.createElement('div');
         aDiv.setAttribute('class', 'flex-element');
         aDiv.setAttribute('data-div-number', `div: ${i}`); 
-        console.log()
         var itemSize = 100 / size;
         aDiv.style.width = itemSize + '%';
         aDiv.style.height = itemSize + '%';
@@ -118,3 +120,5 @@ function createGrid(size) {
 // document.querySelector("body > div > div:nth-child(1)") //javascript path
 // body > div > div:nth-child(1) //selector
 // <div class="flex-element"></div> //outer html
+//https://martin.ankerl.com/2009/12/09/how-to-create-random-colors-programmatically/
+//https://cssgrid.io/
