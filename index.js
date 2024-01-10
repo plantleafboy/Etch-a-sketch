@@ -1,4 +1,5 @@
-
+//write down list of preivous rainbows array rotating
+//write data to database instead of deleting it > and store on server = permanenet storage. 
 const DEFAULTSIZE = 16;
 const golden_ratio = 1.618033988749895
 
